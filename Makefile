@@ -7,7 +7,7 @@ include $(TOPDIR)/rules.mk
 include $(INCLUDE_DIR)/kernel.mk
 
 PKG_NAME:=r8152
-PKG_VERSION:=2.20.1
+PKG_VERSION:=2.21.4
 PKG_RELEASE:=1
 
 PKG_BUILD_DIR:=$(KERNEL_BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)
@@ -15,7 +15,7 @@ PKG_BUILD_DIR:=$(KERNEL_BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)
 include $(INCLUDE_DIR)/package.mk
 
 define KernelPackage/usb-net-rtl8152-vendor
-  TITLE:=Kernel module for USB-to-Ethernet Realtek convertors
+  TITLE:=Realtek RTL8152 USB Fast/Gigabit Ethernet driver
   SUBMENU:=USB Support
   DEPENDS:=+kmod-usb-net
   FILES:= $(PKG_BUILD_DIR)/r8152.ko
@@ -24,7 +24,7 @@ define KernelPackage/usb-net-rtl8152-vendor
 endef
 
 define KernelPackage/usb-net-rtl8152-vendor/description
-  Kernel module for Realtek RTL8152/RTL8153 Based USB Ethernet Adapters
+  Kernel module for Realtek RTL8152/RTL8153/RTL8154/RTL8156/RTL8157/RTL8159 Based USB Ethernet Adapters
 endef
 
 define Build/Compile
